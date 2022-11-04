@@ -21,7 +21,7 @@ public:
 
 public:
 	void Update();
-
+	void LateUpdate();
 public:
 	shared_ptr<Device> GetDevice() { return _device; }
 	shared_ptr<CommandQueue> GetCmdQueue() { return _cmdQueue; }
