@@ -20,6 +20,10 @@ public:
 	void SetProjectionType(PROJECTION_TYPE type) { _type = type; }
 	PROJECTION_TYPE GetProjectionType() { return _type; }
 
+	void SortGameObject();
+	void Render_Deferred();
+	void Render_Forward();
+
 	void SetCullingMaskLayerOnOff(uint8 layer, bool on)
 	{
 		if (on)
@@ -45,6 +49,10 @@ private:
 
 	Frustum _frustum;
 	uint32 _cullingMask = 0;
+
+private:
+	vector<shared_ptr<GameObject>>	_vecDeferred;
+	vector<shared_ptr<GameObject>>	_vecForward;
 
 public:
 
