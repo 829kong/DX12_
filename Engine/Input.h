@@ -36,15 +36,16 @@ enum
 class Input
 {
 	DECLARE_SINGLE(Input);
+
 public:
-	void Init(HWND hand);
+	void Init(HWND hwnd);
 	void Update();
 
 	// ´©¸£°í ÀÖÀ» ¶§
 	bool GetButton(KEY_TYPE key) { return GetState(key) == KEY_STATE::PRESS; }
 	// ¸Ç Ã³À½ ´­·¶À» ¶§
 	bool GetButtonDown(KEY_TYPE key) { return GetState(key) == KEY_STATE::DOWN; }
-	// ¸Ç Ã³À½ ´­·¶´Ù ¶®À» ¶§
+	// ¸Ç Ã³À½ ´­·¶´Ù ¶ÃÀ» ¶§
 	bool GetButtonUp(KEY_TYPE key) { return GetState(key) == KEY_STATE::UP; }
 
 private:

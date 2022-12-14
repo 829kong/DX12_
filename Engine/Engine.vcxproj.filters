@@ -8,19 +8,19 @@
       <UniqueIdentifier>{300f6233-f1b4-4f18-9360-c9bfe0308e34}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shader">
-      <UniqueIdentifier>{8d9f8543-2e9d-45a7-9d99-cc2170b28e22}</UniqueIdentifier>
+      <UniqueIdentifier>{710a24eb-3b22-4cba-b53b-42897f27a6d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Manager">
-      <UniqueIdentifier>{24c35e62-9e56-4b3e-92ba-46fe20062275}</UniqueIdentifier>
+      <UniqueIdentifier>{25b3214d-e145-4b49-8e9d-908a06998ffa}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object">
-      <UniqueIdentifier>{5cb5c2b4-ee1e-4871-ad6d-ae6852485d59}</UniqueIdentifier>
+      <UniqueIdentifier>{dd23f47d-3ac2-4f96-9bfe-4a6fac248639}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\Test">
-      <UniqueIdentifier>{0acee3bb-59ec-485f-a7ac-ea17e6c15688}</UniqueIdentifier>
+      <UniqueIdentifier>{1cfe4b64-4ca1-4958-b16f-73f8ae1985c3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\Component">
-      <UniqueIdentifier>{88af7bce-0c2d-47ff-bfff-c10ad02b812a}</UniqueIdentifier>
+      <UniqueIdentifier>{915d1c10-9db1-4fdb-887a-d0160f593ea1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Object\Resource">
       <UniqueIdentifier>{c5612518-9c4d-408d-926a-9312743d39fa}</UniqueIdentifier>
@@ -33,10 +33,10 @@
     <ClCompile Include="EnginePch.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="CommandQueue.cpp">
+    <ClCompile Include="Engine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Engine.cpp">
+    <ClCompile Include="CommandQueue.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="Device.cpp">
@@ -48,10 +48,10 @@
     <ClCompile Include="RootSignature.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
+    <ClCompile Include="Mesh.cpp">
       <Filter>Object\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
+    <ClCompile Include="Shader.cpp">
       <Filter>Object\Resource</Filter>
     </ClCompile>
     <ClCompile Include="ConstantBuffer.cpp">
@@ -88,7 +88,7 @@
       <Filter>Object\Test</Filter>
     </ClCompile>
     <ClCompile Include="Resources.cpp">
-      <Filter>Object\Resource</Filter>
+      <Filter>Manager</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Object</Filter>
@@ -128,10 +128,10 @@
     <ClInclude Include="d3dx12.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="CommandQueue.h">
+    <ClInclude Include="Engine.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Engine.h">
+    <ClInclude Include="CommandQueue.h">
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="Device.h">
@@ -143,10 +143,10 @@
     <ClInclude Include="RootSignature.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
+    <ClInclude Include="Mesh.h">
       <Filter>Object\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
+    <ClInclude Include="Shader.h">
       <Filter>Object\Resource</Filter>
     </ClInclude>
     <ClInclude Include="ConstantBuffer.h">
@@ -183,7 +183,7 @@
       <Filter>Object\Test</Filter>
     </ClInclude>
     <ClInclude Include="Resources.h">
-      <Filter>Object\Resource</Filter>
+      <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>Object</Filter>
@@ -219,9 +219,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="..\Resources\Shader\forward.fx">
-      <Filter>Shader</Filter>
-    </FxCompile>
     <FxCompile Include="..\Resources\Shader\params.fx">
       <Filter>Shader</Filter>
     </FxCompile>
@@ -231,10 +228,16 @@
     <FxCompile Include="..\Resources\Shader\utils.fx">
       <Filter>Shader</Filter>
     </FxCompile>
+    <FxCompile Include="..\Resources\Shader\forward.fx">
+      <Filter>Shader</Filter>
+    </FxCompile>
     <FxCompile Include="..\Resources\Shader\deferred.fx">
       <Filter>Shader</Filter>
     </FxCompile>
     <FxCompile Include="..\Resources\Shader\lighting.fx">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Resources\Shader\compute.fx">
       <Filter>Shader</Filter>
     </FxCompile>
   </ItemGroup>

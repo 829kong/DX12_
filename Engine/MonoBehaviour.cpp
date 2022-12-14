@@ -8,4 +8,5 @@ MonoBehaviour::MonoBehaviour() : Component(COMPONENT_TYPE::MONO_BEHAVIOUR)
 
 MonoBehaviour::~MonoBehaviour()
 {
+
 }

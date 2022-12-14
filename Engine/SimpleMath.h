@@ -244,7 +244,6 @@ namespace DirectX
             Vector3& operator*= (const Vector3& V) noexcept;
             Vector3& operator*= (float S) noexcept;
             Vector3& operator/= (float S) noexcept;
-            
 
             // Unary operators
             Vector3 operator+ () const noexcept { return *this; }
@@ -341,7 +340,7 @@ namespace DirectX
             Vector4() noexcept : XMFLOAT4(0.f, 0.f, 0.f, 0.f) {}
             constexpr explicit Vector4(float ix) noexcept : XMFLOAT4(ix, ix, ix, ix) {}
             constexpr Vector4(float ix, float iy, float iz, float iw) noexcept : XMFLOAT4(ix, iy, iz, iw) {}
-            explicit Vector4(_In_reads_(4) const float* pArray) noexcept : XMFLOAT4(pArray) {}
+            explicit Vector4(_In_reads_(4) const float *pArray) noexcept : XMFLOAT4(pArray) {}
             Vector4(FXMVECTOR V) noexcept { XMStoreFloat4(this, V); }
             Vector4(const XMFLOAT4& V) noexcept { this->x = V.x; this->y = V.y; this->z = V.z; this->w = V.w; }
             explicit Vector4(const XMVECTORF32& F) noexcept { this->x = F.f[0]; this->y = F.f[1]; this->z = F.f[2]; this->w = F.f[3]; }
@@ -365,14 +364,7 @@ namespace DirectX
             Vector4& operator*= (const Vector4& V) noexcept;
             Vector4& operator*= (float S) noexcept;
             Vector4& operator/= (float S) noexcept;
-            Vector4& operator=(const Vector3& V) noexcept
-            {
-                x = V.x;
-                y = V.y;
-                z = V.z;
-                w = 0.f;
-                return *this;
-            }
+            Vector4& operator=(const Vector3& V) noexcept { x = V.x; y = V.y; z = V.z; w = 0.f; return *this; }
 
             // Unary operators
             Vector4 operator+ () const noexcept { return *this; }

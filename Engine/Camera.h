@@ -4,7 +4,7 @@
 
 enum class PROJECTION_TYPE
 {
-	PERSPECTIVE,// 원근 투영
+	PERSPECTIVE, // 원근 투영
 	ORTHOGRAPHIC, // 직교 투영
 };
 
@@ -15,7 +15,6 @@ public:
 	virtual ~Camera();
 
 	virtual void FinalUpdate() override;
-	void Render();
 
 	void SetProjectionType(PROJECTION_TYPE type) { _type = type; }
 	PROJECTION_TYPE GetProjectionType() { return _type; }
@@ -41,7 +40,7 @@ private:
 
 	float _near = 1.f;
 	float _far = 1000.f;
-	float _fov = XM_PI / 4.f; // field of view 찍는 영역
+	float _fov = XM_PI / 4.f;
 	float _scale = 1.f;
 
 	Matrix _matView = {};
@@ -55,9 +54,8 @@ private:
 	vector<shared_ptr<GameObject>>	_vecForward;
 
 public:
-
+	// TEMP
 	static Matrix S_MatView;
 	static Matrix S_MatProjection;
-
 };
 

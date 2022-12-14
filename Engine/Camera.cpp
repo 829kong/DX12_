@@ -14,7 +14,6 @@ Matrix Camera::S_MatProjection;
 
 Camera::Camera() : Component(COMPONENT_TYPE::CAMERA)
 {
-
 }
 
 Camera::~Camera()

@@ -3,7 +3,7 @@
 enum class OBJECT_TYPE : uint8
 {
 	NONE,
-	GAMEOBJECT,
+	GAMEOBJECT, // PREFAB
 	COMPONENT,
 	MATERIAL,
 	MESH,
@@ -27,14 +27,16 @@ public:
 	OBJECT_TYPE GetType() { return _objectType; }
 
 	void SetName(const wstring& name) { _name = name; }
-	const wstring GetName() { return _name; }
+	const wstring& GetName() { return _name; }
+
+	// TODO : Instantiate
 
 protected:
 	friend class Resources;
-	virtual void Load(const wstring& path) {}
-	virtual void Save(const wstring& path) {}
+	virtual void Load(const wstring& path) { }
+	virtual void Save(const wstring& path) { }
 
-private:
+protected:
 	OBJECT_TYPE _objectType = OBJECT_TYPE::NONE;
 	wstring _name;
 };

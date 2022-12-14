@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Input.h"
 
+
 void Input::Init(HWND hwnd)
 {
 	_hwnd = hwnd;
@@ -18,14 +19,14 @@ void Input::Update()
 		return;
 	}
 
-	BYTE ascilKeys[KEY_TYPE_COUNT] = {};
-	if (::GetKeyboardState(ascilKeys) == false)
+	BYTE asciiKeys[KEY_TYPE_COUNT] = {};
+	if (::GetKeyboardState(asciiKeys) == false)
 		return;
 
 	for (uint32 key = 0; key < KEY_TYPE_COUNT; key++)
 	{
 		// 키가 눌려 있으면 true
-		if (ascilKeys[key] & 0x80)
+		if (asciiKeys[key] & 0x80)
 		{
 			KEY_STATE& state = _states[key];
 
@@ -47,5 +48,3 @@ void Input::Update()
 		}
 	}
 }
-
-

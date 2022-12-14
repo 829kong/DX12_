@@ -1,4 +1,5 @@
 #pragma once
+
 #include "GameObject.h"
 #include "Material.h"
 #include "Mesh.h"
@@ -11,6 +12,7 @@ class Resources
 
 public:
 	void Init();
+
 	template<typename T>
 	shared_ptr<T> Load(const wstring& key, const wstring& path);
 
@@ -18,7 +20,7 @@ public:
 	bool Add(const wstring& key, shared_ptr<T> object);
 
 	template<typename T>
-	shared_ptr<T> Get(const wstring& key);
+	shared_ptr<T> Get(const wstring& Key);
 
 	template<typename T>
 	OBJECT_TYPE GetObjectType();
@@ -39,9 +41,8 @@ private:
 	void CreateDefaultMaterial();
 
 private:
-	using KeyObjMap = std::map<wstring /*key*/, shared_ptr<Object>>;
+	using KeyObjMap = std::map<wstring/*key*/, shared_ptr<Object>>;
 	array<KeyObjMap, OBJECT_TYPE_COUNT> _resources;
-	
 };
 
 template<typename T>

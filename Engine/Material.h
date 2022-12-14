@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+
 class Shader;
 class Texture;
 
@@ -8,7 +9,7 @@ enum
 	MATERIAL_INT_COUNT = 4,
 	MATERIAL_FLOAT_COUNT = 4,
 	MATERIAL_TEXTURE_COUNT = 4,
-	MATERIAL_VECTOR2_COUNT = 4,
+	MATERIAL_VECTOR2_COUNT = 4
 };
 
 struct MaterialParams
@@ -40,9 +41,12 @@ public:
 		_textures[index] = texture;
 		_params.SetTexOn(index, (texture == nullptr ? 0 : 1));
 	}
-	
+
 	void SetVec2(uint8 index, Vec2 value) { _params.SetVec2(index, value); }
-	void PushData();
+
+	void PushGraphicsData();
+	void PushComputeData();
+	void Dispatch(uint32 x, uint32 y, uint32 z);
 
 private:
 	shared_ptr<Shader>	_shader;

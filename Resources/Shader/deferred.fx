@@ -1,5 +1,5 @@
-#ifndef _FORWARD_FX_
-#define _FORWARD_FX_
+#ifndef _DEFAULT_FX_
+#define _DEFAULT_FX_
 
 #include "params.fx"
 
@@ -7,7 +7,7 @@ struct VS_IN
 {
     float3 pos : POSITION;
     float2 uv : TEXCOORD;
-    float3 normal :NORMAL;
+    float3 normal : NORMAL;
     float3 tangent : TANGENT;
 };
 

@@ -1,5 +1,5 @@
-#ifndef _FORWARD_FX_
-#define _FORWARD_FX_
+#ifndef _DEFAULT_FX_
+#define _DEFAULT_FX_
 
 #include "params.fx"
 #include "utils.fx"
@@ -8,7 +8,7 @@ struct VS_IN
 {
     float3 pos : POSITION;
     float2 uv : TEXCOORD;
-    float3 normal :NORMAL;
+    float3 normal : NORMAL;
     float3 tangent : TANGENT;
 };
 
@@ -40,7 +40,7 @@ VS_OUT VS_Main(VS_IN input)
 float4 PS_Main(VS_OUT input) : SV_Target
 {
     float4 color = float4(1.f, 1.f, 1.f, 1.f);
-    if (g_tex_on_0) 
+    if (g_tex_on_0)
         color = g_tex_0.Sample(g_sam_0, input.uv);
 
     float3 viewNormal = input.viewNormal;
@@ -70,7 +70,6 @@ float4 PS_Main(VS_OUT input) : SV_Target
 
      return color;
 }
-
 
 // [Texture Shader]
 // g_tex_0 : Output Texture

@@ -2,9 +2,9 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "MeshRenderer.h"
-#include "MonoBehaviour.h"
 #include "Camera.h"
 #include "Light.h"
+#include "MonoBehaviour.h"
 
 GameObject::GameObject() : Object(OBJECT_TYPE::GAMEOBJECT)
 {
@@ -15,7 +15,6 @@ GameObject::~GameObject()
 {
 
 }
-
 
 void GameObject::Awake()
 {
@@ -127,9 +126,3 @@ void GameObject::AddComponent(shared_ptr<Component> component)
 		_scripts.push_back(dynamic_pointer_cast<MonoBehaviour>(component));
 	}
 }
-
-
-
-
-
-

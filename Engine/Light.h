@@ -1,5 +1,5 @@
 #pragma once
-#include  "Component.h"
+#include "Component.h"
 
 enum class LIGHT_TYPE : uint8
 {
@@ -10,27 +10,27 @@ enum class LIGHT_TYPE : uint8
 
 struct LightColor
 {
-	Vec4 diffuse;
-	Vec4 ambient;
-	Vec4 specular;
+	Vec4	diffuse;
+	Vec4	ambient;
+	Vec4	specular;
 };
 
 struct LightInfo
 {
-	LightColor color;
-	Vec4 position;
-	Vec4 direction;
-	int32 lightType;
-	float range;
-	float angle;
-	int32 padding;
+	LightColor	color;
+	Vec4		position;
+	Vec4		direction;
+	int32		lightType;
+	float		range;
+	float		angle;
+	int32		padding;
 };
 
 struct LightParams
 {
-	uint32 lightCount;
-	Vec3 padding;
-	LightInfo lights[50]; 
+	uint32		lightCount;
+	Vec3		padding;
+	LightInfo	lights[50];
 };
 
 class Light : public Component

@@ -1,8 +1,6 @@
 #pragma once
 #include "Component.h"
 
-
-
 class Transform : public Component
 {
 public:
@@ -18,7 +16,7 @@ public:
 	const Vec3& GetLocalRotation() { return _localRotation; }
 	const Vec3& GetLocalScale() { return _localScale; }
 
-	// Temp
+	// TEMP
 	float GetBoundingSphereRadius() { return max(max(_localScale.x, _localScale.y), _localScale.z); }
 
 	const Matrix& GetLocalToWorldMatrix() { return _matWorld; }
@@ -36,14 +34,13 @@ public:
 	void SetParent(shared_ptr<Transform> parent) { _parent = parent; }
 	weak_ptr<Transform> GetParent() { return _parent; }
 
-
 private:
 	// Parent ±‚¡ÿ
 	Vec3 _localPosition = {};
 	Vec3 _localRotation = {};
-	Vec3 _localScale = { 1.f,1.f,1.f };
+	Vec3 _localScale = { 1.f, 1.f, 1.f };
 
-	Matrix _matLocal = {};
+	Matrix _matLocal= {};
 	Matrix _matWorld = {};
 
 	weak_ptr<Transform> _parent;

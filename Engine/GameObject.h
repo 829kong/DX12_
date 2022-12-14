@@ -4,16 +4,15 @@
 
 class Transform;
 class MeshRenderer;
-class MonoBehaviour;
 class Camera;
 class Light;
+class MonoBehaviour;
 
-class GameObject : public Object ,public enable_shared_from_this<GameObject>
+class GameObject : public Object, public enable_shared_from_this<GameObject>
 {
 public:
 	GameObject();
 	virtual ~GameObject();
-
 
 	void Awake();
 	void Start();
